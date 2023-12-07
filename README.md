@@ -6,20 +6,20 @@ Example of a configuration including FHIR server, Authorisation server and FHIR 
 To download, build and start this demo:
 * in your local disk, go to the parent directory of this demo
 * clone the source of this demo
-  `git clone <thisrepository>`
+  `git clone https://github.com/anssika/FHIRSMARTEx.git`
 * create & start using
   `./setup.sh`
 
 ## To access
 
-Management portal: https://localhost:58021/csp/sys/UtilHome.csp
-Management portal: http://localhost:58011/csp/sys/UtilHome.csp
-PWS: http://localhost:58001/csp/sys/UtilHome.csp
+- Management portal / fhir: https://localhost:58021/csp/sys/UtilHome.csp
+- Management portal / fhir: http://localhost:58011/csp/sys/UtilHome.csp
+- PWS / fhir: http://localhost:58001/csp/sys/UtilHome.csp
 
 ## To stop
 
 To stop:
-´´´docker compose stop´´´
+´docker compose stop´
 
 ## ToDo - prio 1
 
