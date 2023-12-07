@@ -19,7 +19,7 @@ To download, build and start this demo:
 ## To stop
 
 To stop:
-´docker compose stop´
+`docker compose stop`
 
 ## ToDo - prio 1
 
