@@ -1,0 +1,5 @@
+# file used by Mac OS X
+.DS_Store
+
+# folder used by Visual Studio Code
+.vscode
