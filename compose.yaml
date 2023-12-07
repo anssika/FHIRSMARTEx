@@ -1,0 +1,42 @@
+# See https://docs.docker.com/compose/compose-file/03-compose-file/ for best practices
+services:
+  # FHIR server, auth server and clients to test the servers
+  fhir:
+    # 2023.3 may not work ...
+    image: intersystems/irishealth-community:2023.3
+    #image: intersystems/irishealth-community:2023.2
+    container_name: fhir
+    hostname: fhir
+    ports:
+      # PWS
+    - "58001:52773"
+    volumes:
+    - type: bind
+      source: ./durablefhir
+      target: /durable
+    - type: bind
+      source: ./src
+      target: /src
+    environment:
+    - ISC_DATA_DIRECTORY=/durable
+    - ISC_CPF_MERGE_FILE=/durable/merge.cpf
+    command: 
+    - -a /durable/configure.sh
+ 
+  # web gateway for fhir
+  wg-fhir:
+    image: containers.intersystems.com/intersystems/webgateway:latest-cd
+    init: true
+    container_name: wg-fhir
+    hostname: wg-fhir
+    ports:
+    - "58011:80"
+    - "58021:443"
+    environment:
+    - ISC_DATA_DIRECTORY=/wg-shared/durable
+    - ISC_CSP_CONF_FILE=/wg-shared/CSP.conf
+    - ISC_CSP_INI_FILE=/wg-shared/CSP.ini
+    volumes:
+    - type: bind
+      source: ./wg-fhir
+      target: /wg-shared

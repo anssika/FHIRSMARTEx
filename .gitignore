@@ -3,3 +3,19 @@
 
 # folder used by Visual Studio Code
 .vscode
+
+# other folders and files
+certificates
+
+durablefhir/ContainerCheck/
+durablefhir/_LastGood_.cpf
+durablefhir/csp/
+durablefhir/dist/
+durablefhir/httpd/
+durablefhir/iris.cp*
+durablefhir/mgr/
+
+wg-fhir/*.original
+wg-fhir/durable/
+wg-fhir/fhir.*
+
