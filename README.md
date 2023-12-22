@@ -12,9 +12,9 @@ To download, build and start this demo:
 
 ## To access
 
-- Management portal / fhir: https://localhost:58021/csp/sys/UtilHome.csp
-- Management portal / fhir: http://localhost:58011/csp/sys/UtilHome.csp
-- PWS / fhir: http://localhost:58001/csp/sys/UtilHome.csp
+- Management portal / fhir: https://localhost:58143/csp/sys/UtilHome.csp
+- Management portal / fhir: http://localhost:58142/csp/sys/UtilHome.csp
+- Management portal / PWS / fhir: http://localhost:58141/csp/sys/UtilHome.csp
 
 ## To stop
 
@@ -23,7 +23,7 @@ To stop:
 
 ## ToDo - prio 1
 
-See method CreateFHIRServer of class FHIRSMARTEx.Install - the commented code
+Executing OS code from shell
 
 ## ToDo - prio 2
 
