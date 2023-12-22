@@ -1,9 +1,22 @@
 Class FHIRSMARTEx.Setup
 {
 
+Parameter CLIENTSSLCONFIGNAME = "client";
+
+Parameter ISSUERENDPOINTHOST = "wg-fhir";
+
+/// If the port is 443, you can leage the port empty
+/// Parameter ISSUERENDPOINTPORT = 443;
+Parameter ISSUERENDPOINTPORT = 443;
+
 ClassMethod ConfigureInstancefhir(pNamespace As %String = "FHIR")
 {
 	Do ..CreateFHIRServer(pNamespace)
+}
+
+ClassMethod ConfigureInstanceoauth2(pNamespace As %String = "%SYS")
+{
+	//Do ##class(FHIRSMARTEx.Setup.OAuth2).CreateUpdateOAuth2Server()
 }
 
 ClassMethod CreateFHIRServer(pNamespace As %String = "FHIR")

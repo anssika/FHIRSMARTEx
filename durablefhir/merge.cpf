@@ -1,5 +1,0 @@
-[Actions]
-
-CreateResource:Name=%DB_FHIR,Description="The FHIR database"
-CreateDatabase:Name=FHIR,Directory=/durable/mgr/FHIR
-CreateNamespace:Name=FHIR,Globals=FHIR,Routines=FHIR,Interop=1

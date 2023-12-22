@@ -14,7 +14,7 @@ echo
 echo "============================================================"
 echo "Changing file permissions ..."
 echo
-chmod 755 durablefhir/configure.sh
+chmod 755 shared-fhir/configure.sh
 
 echo
 echo "============================================================"

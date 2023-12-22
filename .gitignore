@@ -7,15 +7,9 @@
 # other folders and files
 certificates
 
-durablefhir/ContainerCheck/
-durablefhir/_LastGood_.cpf
-durablefhir/csp/
-durablefhir/dist/
-durablefhir/httpd/
-durablefhir/iris.cp*
-durablefhir/mgr/
+shared-fhir/durable/
 
-wg-fhir/*.original
-wg-fhir/durable/
-wg-fhir/fhir.*
+shared-wg-fhir/*.original
+shared-wg-fhir/wg-fhir.*
 
+src/SMARTFHIR

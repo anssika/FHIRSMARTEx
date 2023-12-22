@@ -1,0 +1,11 @@
+[Actions]
+
+# FHIR: namespace, database and resource
+
+CreateResource:Name=%DB_FHIR,Description="The FHIR database"
+CreateDatabase:Name=FHIR,Directory=/shared/durable/mgr/FHIR
+CreateNamespace:Name=FHIR,Globals=FHIR,Routines=FHIR,Interop=1
+
+# client: a simple SSL configuration with no certificates
+
+CreateSSLConfigs:Name=client,Type=0

@@ -1,0 +1,21 @@
+================================================================================
+ToDo
+================================================================================
+Automate fetching client_id and secret from a client configuration
+
+Ports have been changed --> update documentation, e.g. README.md
+
+/shared-fhir/configure.sh does not run because each command is not run
+--> fing our how to execture objectscript from shell
+
+Document adding wg-fhir to /etc/hosts
+
+Move interop packages (classes) from package FHIRSMARTEx.Client to FHIRSMARTEx.Client.Interop
+
+================================================================================
+Issues
+================================================================================
+For some reason, the management portal does not work with gzip disabled - enabled it for /csp
+--> compare to the settings in fi01 (it works from there)
+
+

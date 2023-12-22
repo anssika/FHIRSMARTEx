@@ -4,24 +4,23 @@ services:
   fhir:
     # 2023.3 may not work ...
     image: intersystems/irishealth-community:2023.3
-    #image: intersystems/irishealth-community:2023.2
     container_name: fhir
     hostname: fhir
     ports:
       # PWS
-    - "58001:52773"
+    - "58141:52773"
     volumes:
     - type: bind
-      source: ./durablefhir
-      target: /durable
+      source: ./shared-fhir
+      target: /shared
     - type: bind
       source: ./src
       target: /src
     environment:
-    - ISC_DATA_DIRECTORY=/durable
-    - ISC_CPF_MERGE_FILE=/durable/merge.cpf
+    - ISC_DATA_DIRECTORY=/shared/durable
+    - ISC_CPF_MERGE_FILE=/shared/merge.cpf
     command: 
-    - -a /durable/configure.sh
+    - -a /shared/configure.sh
  
   # web gateway for fhir
   wg-fhir:
@@ -30,13 +29,13 @@ services:
     container_name: wg-fhir
     hostname: wg-fhir
     ports:
-    - "58011:80"
-    - "58021:443"
+    - "58142:80"
+    - "58143:58143"
     environment:
-    - ISC_DATA_DIRECTORY=/wg-shared/durable
-    - ISC_CSP_CONF_FILE=/wg-shared/CSP.conf
-    - ISC_CSP_INI_FILE=/wg-shared/CSP.ini
+    - ISC_CSP_CONF_FILE=/shared/CSP.conf
+    - ISC_CSP_INI_FILE=/shared/CSP.ini
+    #- ISC_DATA_DIRECTORY=/wg-shared/durable
     volumes:
     - type: bind
-      source: ./wg-fhir
-      target: /wg-shared
+      source: ./shared-wg-fhir
+      target: /shared
