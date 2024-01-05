@@ -19,9 +19,8 @@ services:
     environment:
     - ISC_DATA_DIRECTORY=/shared/durable
     - ISC_CPF_MERGE_FILE=/shared/merge.cpf
-    command: 
-    - -a /shared/setup.sh
- 
+    command: ["-a","sh /shared/configureIRIS.sh"]
+
   # web gateway for fhir
   wg-fhir:
     image: containers.intersystems.com/intersystems/webgateway:latest-cd

@@ -85,7 +85,7 @@ GenCA "/C=FI/ST=Finland/L=testL/O=testO/OU=testOU/CN=testCA" $CA_FILE
 # HTTP server --> fhir
 echo "creating certificate for HTTP server of fhir ..."
 GenCertificate "/C=FI/ST=Finland/L=testL/O=testO/OU=testOU/CN=wg-fhir" "wg-fhir" $CA_FILE
-echo "copying to ../wg-fhir"
-cp wg-fhir.cer ../wg-fhir
-cp wg-fhir.key ../wg-fhir
+echo "copying to ../shared-wg-fhir"
+cp wg-fhir.cer ../shared-wg-fhir
+cp wg-fhir.key ../shared-wg-fhir
 
