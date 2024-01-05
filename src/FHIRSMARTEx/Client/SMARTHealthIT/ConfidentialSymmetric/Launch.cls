@@ -1,3 +1,5 @@
+/// This does not work ...
+/// 
 /// <p>A client for testing client-confidential-symmetric authentication mechanism
 /// https://build.fhir.org/ig/HL7/smart-app-launch/client-confidential-symmetric.html</p>
 /// 
@@ -7,16 +9,12 @@
 /// <p>To invoke this, provide iss and optionally launch: e.g.:
 /// 	https://fi01.intersystems.co.uk/csp/healthshare/smart/SMARTFHIR.Test.SMARTHealthIT.ConfidentialPublic.Launch.cls?iss=https://fi01.intersystems.co.uk/sfs01/fhir/r4
 /// </p>
-Class FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Launch Extends %CSP.Page
+Class FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialSymmetric.Launch Extends %CSP.Page
 {
 
 // Name of the client descriptor
 
-Parameter OAUTH2APPNAME = "SMARTHealthITConfidentialPublic";
-
-// Parameter CLIENTID = "P1e1Zf2Bs2-elV16jAYYPOtQ7D-TbqYt7B2SON6lpro";
-
-// Parameter CLIENTSECRET = "FmaGZtnFar2ydF6zRLOeap9wsqIeDYTtW5chkRxUIDMwhDgZeNdh4UmEAlJ8wJJLCTjp9H-BQVbVmFC9k5Tvpw";
+Parameter OAUTH2APPNAME = "SMARTHealthITConfidentialSymmetric";
 
 ClassMethod OnPage() As %Status
 {
@@ -35,6 +33,13 @@ ClassMethod OnPage() As %Status
 	 * Find the clientId and clientSecret from the Server's client descriptors
 	 *
 	 */
+
+ //&html<<p>start</p>>
+ 	#Dim tNamespace = $Namespace
+ //&html<<p>tNamespace = #(tNamespace)#</p>>
+	Zn "%SYS"
+ //&html<<p>start2</p>>
+
 	#Dim tClient As OAuth2.Server.Client = $$$NULLOREF
 	#Dim tOAuth2AppName As %String = ..#OAUTH2APPNAME
 	#Dim tClientId As %String = ""
@@ -48,6 +53,9 @@ ClassMethod OnPage() As %Status
 		&html<<html><body>OAuth client description with name #(tOAuth2AppName)# not found</body></html>>
 		Return $$$OK
 	}
+	Zn tNamespace
+
+ //&html<<p>tClient = #(tClient)#</p>>
 
 	/*
 	 * This is from https://docs.smarthealthit.org/tutorials/javascript/
@@ -90,14 +98,6 @@ ClassMethod OnPage() As %Status
 
 >
 	Return $$$OK
-}
-
-ClassMethod Scope() As %String
-{
-	Return "openid patient/*.* launch/patient/2"
-	//Return "openid patient/*.* launch/patient/*"
-	//Return "openid patient/*.*"
-	//Return "openid user/*.*"
 }
 
 }

@@ -10,8 +10,11 @@ ClassMethod Setup()
 	Do ..CreateUpdateOAuth2Server()
 
 	#Dim tRedirectURL As %String
-	Set tRedirectURL = "https://" _ ..#ISSUERENDPOINTHOST _ ":" _ ..#ISSUERENDPOINTPORT _ "/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls"
-	Do ..CreateUpdateAClientDescription("SMARTHealthITConfidentialPublic", "confidential", "SMARTHealthIT ConfidentialPublic Client", tRedirectURL)
+	Set tRedirectURL = "https://" _ ..#ISSUERENDPOINTHOST _ ":" _ ..#ISSUERENDPOINTPORT _ "/csp/healthshare/fhir/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialSymmetric.Index.cls"
+	Do ..CreateUpdateAClientDescription("SMARTHealthITConfidentialSymmetric", "confidential", "SMARTHealthIT confidential symmetric client", tRedirectURL)
+	// This does not work ...
+	//Set tRedirectURL = "https://" _ ..#ISSUERENDPOINTHOST _ ":" _ ..#ISSUERENDPOINTPORT _ "/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialASymmetric.Index.cls"
+	//Do ..CreateUpdateAClientDescription("SMARTHealthITConfidentialASymmetric", "confidential", "SMARTHealthIT confidential asymmetric client", tRedirectURL)
 }
 
 /// OAuth2 server:
@@ -46,6 +49,15 @@ ClassMethod CreateUpdateOAuth2Server()
 
 	Set tConfiguration.CustomizationNamespace = "%SYS"
 	Set tConfiguration.CustomizationRoles = "%DB_IRISSYS,%Manager"
+
+	Set tConfiguration.GenerateTokenClass = "%OAuth2.Server.JWT"
+
+ /*	"A" "authorization_code")
+	"I" "implicit")
+	"P" "password")
+	"C" "client_credentials")
+	"J" "jwt_authorization") */
+	Set tConfiguration.SupportedGrantTypes = "AIPCJ"
 
 	Set tStatus = tConfiguration.Save()
 	If ($$$ISERR(tStatus)) Throw ##class(%Exception.StatusException).CreateFromStatus(tStatus)
@@ -110,18 +122,4 @@ ClassMethod Test()
 	ZWrite tClient.Metadata
 }
 
-/*
-
-/// OAuth2 server:
-/// Client descriptors for the OAuth2 server
-ClassMethod CreateUpdateClientDescriptors()
-{
-	// DO we need a redirect URL for resource server?
-	//Do ..CreateUpdateAClientDescription("/fhir/r4", "resource", "FHIR resource server /fhir/r4", "https://fi01.intersystems.co.uk/csp/sys/oauth2/OAuth2.Response.cls")
-	//Do ..CreateUpdateAClientDescription("/fhir/r4", "resource", "FHIR resource server /fhir/r4")
-	#Dim tRedirectURL As %String
-	Set tRedirectURL = "https://" _ ..#ISSUERENDPOINTHOST _ ":" _ ..#ISSUERENDPOINTPORT _ "/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls"
-	//Do ..CreateUpdateAClientDescription("SMARTHealthITCP", "confidential", "SMARTHealthIT ConfidentialPublic Client", tRedirectURL)
-}
-*/
 }

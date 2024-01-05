@@ -20,7 +20,7 @@ services:
     - ISC_DATA_DIRECTORY=/shared/durable
     - ISC_CPF_MERGE_FILE=/shared/merge.cpf
     command: 
-    - -a /shared/configure.sh
+    - -a /shared/setup.sh
  
   # web gateway for fhir
   wg-fhir:

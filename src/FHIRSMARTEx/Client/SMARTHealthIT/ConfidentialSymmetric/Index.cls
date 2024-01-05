@@ -1,4 +1,6 @@
-Class FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index Extends %CSP.Page
+/// This does not work ...
+/// 
+Class FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialSymmetric.Index Extends %CSP.Page
 {
 
 ClassMethod OnPage() As %Status
@@ -85,14 +87,6 @@ ClassMethod OnPage() As %Status
 </html>
 >
 	Return $$$OK
-}
-
-ClassMethod Scope() As %String
-{
-	Return "openid patient/*.* launch/patient/2"
-	//Return "openid patient/*.* launch/patient/*"
-	//Return "openid patient/*.*"
-	//Return "openid user/*.*"
 }
 
 }

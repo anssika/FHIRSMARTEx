@@ -13,11 +13,13 @@ ClassMethod CreateUpdateFHIRServer()
 {
 	#Dim tStatus As %Status = $$$OK
 
-	#Dim tAppKey As %String = "/fhir/r4"
-	#Dim tOAuth2ClientName As %String = "/fhir/r4"
-
 	// Requirements of a namespace for a FHIR server
 	Do ##class(HS.FHIRServer.Installer).InstallNamespace()
+
+	// Properties of the FHIR server
+	#Dim tAppKey As %String = "/fhir/r4"
+	#Dim tStrategyClass As %String = "FHIRSMARTEx.FHIRServer.Storage.Json.InteractionsStrategy"
+	#Dim tOAuth2ClientName As %String = "/fhir/r4"
 
 	// Local profile - search parameters
 	//do ##class(HS.FHIRMeta.Load.NpmLoader).importPackages("/home/irisowner/irisdev/MyFhirServer-searchparameters@0.0.1")
@@ -27,7 +29,7 @@ ClassMethod CreateUpdateFHIRServer()
 	{
 		//Set packageList = $ListBuild("hl7.fhir.r4.core@4.0.1", "MyFhirServer-searchparameters@0.0.1")
 		Set tPackageList = $ListBuild("hl7.fhir.r4.core@4.0.1")
-		Do ##class(HS.FHIRServer.Installer).InstallInstance(tAppKey, "HS.FHIRServer.Storage.Json.InteractionsStrategy", tPackageList)
+		Do ##class(HS.FHIRServer.Installer).InstallInstance(tAppKey, tStrategyClass, tPackageList)
 
 		// Enable logging (see https://docs.intersystems.com/irisforhealthlatest/csp/docbook/DocBook.UI.Page.cls?KEY=HXFHIR_server_debugMaintain)
 		//Set ^FSLogChannel("all") = 1

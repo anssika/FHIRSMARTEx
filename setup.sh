@@ -12,15 +12,15 @@ echo
 
 echo
 echo "============================================================"
-echo "Changing file permissions ..."
-echo
-chmod 755 shared-fhir/configure.sh
-
-echo
-echo "============================================================"
 echo "Building and starting containers ..."
 echo
 docker compose up -d
+
+echo
+echo "============================================================"
+echo "Setting up IRIS ..."
+echo
+docker exec -it fhir sh -c "iris session iris < /shared/setup.objectscript"
 
 echo
 echo "============================================================"

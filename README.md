@@ -1,29 +1,33 @@
 # FHIRSMARTREx
-Example of a configuration including FHIR server, Authorisation server and FHIR clients all implemented using IRIS
+Example of a configuration including FHIR server, Authorisation server and FHIR clients - all implemented using IRIS
 
-## To start
+## Install
 
-To download, build and start this demo:
-* in your local disk, go to the parent directory of this demo
-* clone the source of this demo
-  `git clone https://github.com/anssika/FHIRSMARTEx.git`
-* create & start using
-  `./setup.sh`
+Go to a local folder and:
+```bash
+git clone https://github.com/anssika/FHIRSMARTEx.git
+cd ./FHIRSMARTEx
+./setup.sh
+```
+This will also start the containers.
 
 ## To access
 
 - Management portal / fhir: https://localhost:58143/csp/sys/UtilHome.csp
-- Management portal / fhir: http://localhost:58142/csp/sys/UtilHome.csp
-- Management portal / PWS / fhir: http://localhost:58141/csp/sys/UtilHome.csp
+- FHIR clients: https://wg-fhir:58143/csp/healthshare/fhir/FHIRSMARTEx.Util.CSP.Home.cls
 
 ## To stop
 
-To stop:
-`docker compose stop`
+To stop the containers:
+```bash
+docker compose stop
+```
+# To start again
 
-## ToDo - prio 1
-
-Executing OS code from shell
+To start the containers:
+```bash
+docker compose up -d
+```
 
 ## ToDo - prio 2
 
