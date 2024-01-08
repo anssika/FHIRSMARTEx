@@ -3,7 +3,7 @@ Class FHIRSMARTEx.FHIRServer.Util.OAuth2Token Extends HS.FHIRServer.Util.OAuth2T
 
 Method ValidateToken() [ Private ]
 {
-	Return ##Super()
+	Do ##Super()
 
  $$$FSLog("Ak******************** ValidateToken() starts")
 	// Must specify an OAuth 2.0 Client name if going to handle a token.

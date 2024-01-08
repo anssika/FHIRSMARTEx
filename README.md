@@ -14,7 +14,11 @@ This will also start the containers.
 ## To access
 
 - Management portal / fhir: https://localhost:58143/csp/sys/UtilHome.csp
-- FHIR clients: https://wg-fhir:58143/csp/healthshare/fhir/FHIRSMARTEx.Util.CSP.Home.cls
+- FHIR test clients: https://wg-fhir:58143/csp/healthshare/fhir/FHIRSMARTEx.Util.CSP.Home.cls
+
+You can user username/passwod **superuser**/**SYS** when logging in the first time.
+
+After the first succesfull login, IRIS redirects you to a page to change the default password. The old password is **SYS** and the least secure choice for the new password would be **sys**.
 
 ## To stop
 
