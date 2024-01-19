@@ -1,0 +1,565 @@
+Show Response
+
+GET /csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Launch.cls?iss=https://wg-fhir:58143/fhir/r4&launch=MyLaunchId HTTP/1.1
+Host: wg-fhir:58143
+Sec-Fetch-Site: same-origin
+Accept-Encoding: gzip, deflate, br
+Cookie: CSPSESSIONID-SP-58143-UP-csp-sys-=00i000010000NCghswp9SpunNzI2Qc8n_5bFd9aXpxZzWyJDfM; CSPSESSIONID-SP-58142-UP-csp-sys-=00c000010000RlTrAHBbxL$sI3vs3Idgyqd64ZFZMCLJzC7az9; CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+Connection: keep-alive
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Referer: https://wg-fhir:58143/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.Start.cls
+Sec-Fetch-Dest: document
+Accept-Language: en-GB,en;q=0.9
+
+Show Request
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Set-Cookie: CSPSESSIONID-SP-58143-UP-csp-sys-=00b000010000NCghswp9Sp6EZqTyyuMaMJ0JPi53f_inhU4nza; path=/csp/sys/; secure; httpOnly; sameSite=strict;
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:27 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+Set-Cookie: CSPWSERVERID=hzWwa0dA; path=/; httpOnly; secure;
+Content-Encoding: gzip
+Content-Length: 780
+
+\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03tTmO\xdb0\x10\xfe\x8e\xd4\xffp\xcb\x87i\x9bhR\x18\x9b\x18\xeb\x90x\xe9\xdb`\xa2*)/\xfb\x82\\xc7\xc1\x06\xc7v\xedKK\x98\xf6\xdf\xe7$\x85\x05\xd6YQb\x9f\xef\x9e\xbb{\xeer\xad\x0dhmt\xdf\x1c\x9f\x1d\xc5\xd7\xe3\x1ep\xcc\xe4\xbe\x17\xac\xbe\xe0W\x973\x92\xac\xf6\xd59cH\x80rb\x1d\xc3o\xc14\xee\xb7w\x03\x88\x9a\x1a(P\xb2\xfdS\x92+\xca\xe1G\x01\x07\xe3q7\xaa\x85\x0d-G\xad0\x08\xce\xd2o\x01G4n/\x8ah\xa2\xc2;\x970)\x166T\x0c#e\xb2(\xe5\xc2R)\x98\xc2h\x96\x0b\x99T\x82v-\xf1\xda\xc1~7\xaa\xb1\x9e"\x8e\x1a!wg:)\xfeu\xdb\x90\x94\xab?\x1cMBMr\xe4\xdba\xf9\xd6V<\xb2w\xbfZ%;\xf0bE\x11\xc4\x9cA\xed\xfdF$\x80\x9c \x14:\x07\xc7u.\x13\xe0d\xc1@\xcf\x90\x08\xc5\x12 )2\x0b\x96\xdd\x0a\xe77B\xdd\x02Y\xd9\x02\xc15\xd8\xe8\xb1{\xc3I\xf8\xfa\xaa\xb6\x19%{\x10\x18~/>\xc6\xe7\xf1\xe1a\xbc\xbb\xf8r\x8f\xe6j\x8b~!\xa7b\xa8\x07?\xe9\x99\x9dg\xfdx~\xdd\xe9\x0f:\xa6\x13l\x
+ae\xc79g\xd42\xf4X\xe9\xcf\xfb\x1b\xe4\xbd\xf6Uq6\x1f\xf6\x16}y\xd2\x1f\x8c\x0fi\x8f\xdeL\xe7\x07y\xcc\xaf\xa6suA\x8e\xd3\xb3C\xd1yX\xec\xdc\xde\xcc\xf8E\x81\xc3\xc5rx|~b\xc4\xa5\xe9\xf0Yg\xfbb\xb0;1\xf4\xea\xce~\xfa\xfc\xfd\xf12_Vn\xffC\x9c\xa3\xda0\xf7\x975\xcb\xe69s\x08\xa9\xd5\xd9s\xf60R~/\x1cP\xe2\x18,\xfdC<a\xa8\xf7\xd6\x80\xca\xba\xcd\x1a\xab\x0d\x03\x86\x15\xd6\xea\x8ej\x85\xeca\x1d\xdd>\x16\xe5k\xf8\x16\xca\x96\x9a:_\xaa\xbf\xc64\xb7\xb6\xacS\xee\xc5kL\x0d\xc1\xaa%?\x84\xd6w[\xedwR\xeeV\x17\x90\x10$\xaf\xed\xaa\xec=\xefu`\xd1\x93\xea*\x8c\xe7 ^b\xff\x97\xce\xc2\x08J\xa4,6A\xa4%\x99e\xa3%\xc22\x8aS+\xc0h\xa1\xd03\xad\xabl\xac\xd6\xdeO\xfa"\xb3ZW\xdbb\x0d\xf8\xbb%g\x965X,!\x85{\xbfYU\x8d\x12\x05:\x13XWI\x1b\x14Z\xc1\x8cQ\xe2\xc9\xaal\x12\x96\x92\",\x88\xcc\x99\xb7[\xe3!\x08\x83\x10\x86z\xc9\x16\xccn\x82\xd3\x99o\x0ef\xfd\xc1A\xa2A\xf9p]n\x8c\xb6\x8d8A\xa8\x84=\xf8\xf6q\xba4\x07\xa2\x12\xff\x8d\x825\xe8K!e\x05\xe2\x7fg\x9dy>+\xa6 #\xe6\x89\x91\xa0\x02\x0b\xcbQ\x17@*\xa4\x0fS\xd5}\xf9\xec\xef\x9f\xdf\xb0\xc1\xaf\xaf\xe2\xd3\xd4Z\xde\xb6\xcb\xd2\xed}\xda\xdd\xda\xf9\x18Qg"W\xb8\xa8\x9c)\xe7?\x0e&q\xef!<\xaa\x87Uu\x1c2"\x91\x8f\xe2\xf0H\xabT$^.\x88\x1c\xe73)h8\xaaB\xa2\xd2\xbdJ\xe9\xf7\xfb\xaf\x8d\x11\xf6z\xdc\xadF\x9c\x9f{\xab\xb1\xdd\xdahm\xfc\x01\x00\x00\xff\xff\x03\x00\x8a\xe9 \xfe\xda\x05\x00\x00
+
+
+
+Show Response
+
+GET /fhir/r4/.well-known/smart-configuration HTTP/1.1
+Host: wg-fhir:58143
+Sec-Fetch-Site: same-origin
+Accept-Encoding: gzip, deflate, br
+Cookie: CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+Connection: keep-alive
+Sec-Fetch-Mode: cors
+Accept: application/json
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Referer: https://wg-fhir:58143/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Launch.cls?iss=https://wg-fhir:58143/fhir/r4&launch=MyLaunchId
+Sec-Fetch-Dest: empty
+Accept-Language: en-GB,en;q=0.9
+
+Show Request
+
+HTTP/1.1 200
+Content-Type: application/json
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:27 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+Content-Length: 700
+
+{"authorization_endpoint":"https://wg-fhir:58143/oauth2/authorize","token_endpoint":"https://wg-fhir:58143/oauth2/token","token_endpoint_auth_methods":["client_secret_post","client_secret_basic","client_secret_jwt","private_key_jwt"],"registration_endpoint":"https://wg-fhir:58143/oauth2/register","scopes_supported":["openid","profile","email","address","phone","scope1"],"response_types_supported":["code","id_token","id_token token","token"],"introspection_endpoint":"https://wg-fhir:58143/oauth2/introspection","revocation_endpoint":"https://wg-fhir:58143/oauth2/revocation","capabilities":["launch-ehr","client-confidential-symmetric","client-public","context-ehr-patient","permission-patient"]}
+
+
+Show Response
+
+GET /oauth2/.well-known/openid-configuration HTTP/1.1
+User-Agent: Mozilla/4.0 (compatible; InterSystems IRIS;)
+Host: wg-fhir:58143
+Accept-Encoding: gzip
+
+Show Request
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:27 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+Content-Length: 3291
+
+{
+"issuer" : "https://wg-fhir:58143/oauth2",
+"authorization_endpoint" : "https://wg-fhir:58143/oauth2/authorize",
+"token_endpoint" : "https://wg-fhir:58143/oauth2/token",
+"userinfo_endpoint" : "https://wg-fhir:58143/oauth2/userinfo",
+"revocation_endpoint" : "https://wg-fhir:58143/oauth2/revocation",
+"introspection_endpoint" : "https://wg-fhir:58143/oauth2/introspection",
+"jwks_uri" : "https://wg-fhir:58143/oauth2/jwks",
+"registration_endpoint" : "https://wg-fhir:58143/oauth2/register",
+"end_session_endpoint" : "https://wg-fhir:58143/oauth2/logout",
+"scopes_supported" : [ "openid", "profile", "email", "address", "phone", "scope1" ],
+"response_types_supported" : [ "code", "id_token", "id_token token", "token" ],
+"response_modes_supported" : [ "query", "fragment", "form_post" ],
+"code_challenge_methods_supported" : [ "plain", "S256" ],
+"grant_types_supported" : [ "authorization_code", "implicit", "refresh_token" ],
+"subject_types_supported" : [ "public" ],
+"id_token_signing_alg_values_supported" : [ "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512" ],
+"id_token_encryption_alg_values_supported" : [ "none", "RSA1_5", "RSA-OAEP", "A128KW", "A192KW", "A256KW", "dir" ],
+"id_token_encryption_enc_values_supported" : [ "none", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
+"userinfo_signing_alg_values_supported" : [ "none", "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512" ],
+"userinfo_encryption_alg_values_supported" : [ "none", "RSA1_5", "RSA-OAEP", "A128KW", "A192KW", "A256KW", "dir" ],
+"userinfo_encryption_enc_values_supported" : [ "none", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
+"access_token_signing_alg_values_supported" : [ "none", "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512" ],
+"access_token_encryption_alg_values_supported" : [ "none", "RSA1_5", "RSA-OAEP", "A128KW", "A192KW", "A256KW", "dir" ],
+"access_token_encryption_enc_values_supported" : [ "none", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
+"request_object_signing_alg_values_supported" : [ "none", "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512" ],
+"request_object_encryption_alg_values_supported" : [ "none", "RSA1_5", "RSA-OAEP", "A128KW", "A192KW", "A256KW", "dir" ],
+"request_object_encryption_enc_values_supported" : [ "none", "A128CBC-HS256", "A192CBC-HS384", "A256CBC-HS512" ],
+"token_endpoint_auth_methods_supported" : [ "client_secret_post", "client_secret_basic", "client_secret_jwt", "private_key_jwt" ],
+"token_endpoint_auth_signing_alg_values_supported" : [ "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "ES256", "ES384", "ES512" ],
+"claims_supported" : [ "preferred_username", "email", "email_verified", "name", "phone_number", "phone_number_verified", "iss", "sub", "aud", "exp", "auth_time", "jti", "sid" ],
+"ui_locales_supported" : [ "ar", "de", "en", "en-gb", "en-us", "es", "es-cl", "fr", "it", "ja", "ko", "nl", "pt-br", "ru", "uk", "zh-cn" ],
+"claims_parameter_supported" : true,
+"request_parameter_supported" : true,
+"request_uri_parameter_supported" : true,
+"frontchannel_logout_supported" : true,
+"frontchannel_logout_session_supported" : true
+}
+
+
+Show Response
+
+GET /oauth2/authorize?response_type=code&client_id=phki3TSTBBT8v9ktpX1c9aLiHoGZcOrqmFTqY0FG0p0&scope=launch%2Fpatient%20openid%20fhirUser%20patient%2F*.read&redirect_uri=https%3A%2F%2Fwg-fhir%3A58143%2Fcsp%2Fsys%2FFHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls&aud=https%3A%2F%2Fwg-fhir%3A58143%2Ffhir%2Fr4&state=0Ox6EyLRZVEA0uUH&launch=MyLaunchId HTTP/1.1
+Host: wg-fhir:58143
+Sec-Fetch-Site: same-origin
+Accept-Encoding: gzip, deflate, br
+Cookie: CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+Connection: keep-alive
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Referer: https://wg-fhir:58143/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Launch.cls?iss=https://wg-fhir:58143/fhir/r4&launch=MyLaunchId
+Sec-Fetch-Dest: document
+Accept-Language: en-GB,en;q=0.9
+
+Show Request
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:27 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+Content-Length: 2972
+
+<html>
+<head><title>OAuth2 Login Page</title>
+
+<style type="text/css">
+
+/* begin generic styles */
+body {
+font-family: Helvetica, sans-serif;
+text-align: center;
+}
+input[type=submit]:hover {
+cursor: hand;
+}
+.errorCode {
+color: #da4848;
+}
+/* end generic styles */
+
+/* begin form style */
+#topLabel {
+font-weight: bold;
+margin-top: 5%;
+padding: 10px;
+}
+.loginForm,
+.permissionForm {
+background: #F9F9F9;
+border: 1px solid #C2C2C2;
+border-radius: 5px;
+margin-top: 10px;
+width: 30%;
+min-width: 500px;
+margin: 0 auto;
+}
+.loginForm *,
+.permissionForm * {
+padding: 10px;
+}
+.loginForm input,
+.permissionForm input {
+width: 200px;
+}
+.loginForm input[type=submit],
+.permissionForm input[type=submit] {
+width: 100px;
+}
+.loginForm input[type=submit]:hover,
+.permissionForm input[type=submit]:hover {
+border-radius: 5px;
+background: #A6CFEC;
+transition: all .15s ease-in-out;
+}
+.permissionForm h1 {
+line-height: 40px;
+font-size: 22px;
+font-weight: normal;
+}
+.permissionTitleRequest, .permissionTitleExisting {
+background: lightgray;
+font-weight: 600;
+font-size: 16px;
+margin-top: 10px;
+text-align: left;
+}
+.permissionItemExisting, .permissionItemRequest {
+border-bottom: 1px solid #9e9e9e;
+text-align: left;
+}
+.logoClass {
+margin-top: 22px;
+margin: 0 auto;
+}
+.userBox {
+font-size: 11px;
+float: left;
+text-align: left;
+}
+.linkBox {
+font-size: 11px;
+float: right;
+text-align: right;
+}
+/* end of form style */
+
+</style>
+
+<script type="text/javascript">
+function doLogin()
+{
+var username = document.getElementById("Username").value;
+var password = document.getElementById("Password").value;
+var errors = "";
+if (username.length < 1) {
+errors = 'Please enter Username';
+}
+if (password.length < 1) {
+if (errors === "") {
+errors = 'Please enter Password';
+} else {
+errors = 'Please enter Username and Password';
+}
+}
+if (errors) {
+alert(errors);
+return false;
+}
+
+// submit the form
+return true;
+}
+</script>
+
+</head>
+<body>
+<div id="topLabel">Sign in with your Account</div>
+<div>
+<form autocomplete="off" method="post" class="loginForm">
+<input type="hidden" name="AuthorizationCode" value="ypWzGdWnudohXQcj1B283ApjFqPg5csogO-UDV7wZCSlnf8gHHzvH_-4DiseJSScNUc0NbujTln41iHmPiu9zA" />
+
+<div style="padding-top:30px;"><input type="text" id="Username" name="Username" placeholder="UserName" autofocus autocomplete="off" ></div>
+<div><input type="password" id="Password" name="Password" placeholder="Password" autocomplete="off" ></div>
+<div><input type="submit" id="btnLogin" name="Login" value="Login" onclick="return doLogin();"/></div>
+<div><input type="submit" id="btnCancel" name="Cancel" value="Cancel"/></div>
+
+</form>
+</div>
+
+
+
+</body>
+<html>
+
+
+Show Response
+
+POST /oauth2/authorize?response_type=code&client_id=phki3TSTBBT8v9ktpX1c9aLiHoGZcOrqmFTqY0FG0p0&scope=launch%2Fpatient%20openid%20fhirUser%20patient%2F*.read&redirect_uri=https%3A%2F%2Fwg-fhir%3A58143%2Fcsp%2Fsys%2FFHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls&aud=https%3A%2F%2Fwg-fhir%3A58143%2Ffhir%2Fr4&state=0Ox6EyLRZVEA0uUH&launch=MyLaunchId HTTP/1.1
+Host: wg-fhir:58143
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Accept-Language: en-GB,en;q=0.9
+Accept-Encoding: gzip, deflate, br
+Sec-Fetch-Mode: navigate
+Content-Type: application/x-www-form-urlencoded
+Origin: https://wg-fhir:58143
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Referer: https://wg-fhir:58143/oauth2/authorize?response_type=code&client_id=phki3TSTBBT8v9ktpX1c9aLiHoGZcOrqmFTqY0FG0p0&scope=launch%2Fpatient%20openid%20fhirUser%20patient%2F*.read&redirect_uri=https%3A%2F%2Fwg-fhir%3A58143%2Fcsp%2Fsys%2FFHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls&aud=https%3A%2F%2Fwg-fhir%3A58143%2Ffhir%2Fr4&state=0Ox6EyLRZVEA0uUH&launch=MyLaunchId
+Content-Length: 148
+Connection: keep-alive
+Sec-Fetch-Dest: document
+Cookie: CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+
+AuthorizationCode=ypWzGdWnudohXQcj1B283ApjFqPg5csogO-UDV7wZCSlnf8gHHzvH_-4DiseJSScNUc0NbujTln41iHmPiu9zA&Username=superuser&Password=***&Login=Login
+Show Request
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: https://wg-fhir:58143
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:33 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+Content-Length: 2543
+
+<html>
+<head><title>OAuth2 Permissions Page</title>
+
+<style type="text/css">
+
+/* begin generic styles */
+body {
+font-family: Helvetica, sans-serif;
+text-align: center;
+}
+input[type=submit]:hover {
+cursor: hand;
+}
+.errorCode {
+color: #da4848;
+}
+/* end generic styles */
+
+/* begin form style */
+#topLabel {
+font-weight: bold;
+margin-top: 5%;
+padding: 10px;
+}
+.loginForm,
+.permissionForm {
+background: #F9F9F9;
+border: 1px solid #C2C2C2;
+border-radius: 5px;
+margin-top: 10px;
+width: 30%;
+min-width: 500px;
+margin: 0 auto;
+}
+.loginForm *,
+.permissionForm * {
+padding: 10px;
+}
+.loginForm input,
+.permissionForm input {
+width: 200px;
+}
+.loginForm input[type=submit],
+.permissionForm input[type=submit] {
+width: 100px;
+}
+.loginForm input[type=submit]:hover,
+.permissionForm input[type=submit]:hover {
+border-radius: 5px;
+background: #A6CFEC;
+transition: all .15s ease-in-out;
+}
+.permissionForm h1 {
+line-height: 40px;
+font-size: 22px;
+font-weight: normal;
+}
+.permissionTitleRequest, .permissionTitleExisting {
+background: lightgray;
+font-weight: 600;
+font-size: 16px;
+margin-top: 10px;
+text-align: left;
+}
+.permissionItemExisting, .permissionItemRequest {
+border-bottom: 1px solid #9e9e9e;
+text-align: left;
+}
+.logoClass {
+margin-top: 22px;
+margin: 0 auto;
+}
+.userBox {
+font-size: 11px;
+float: left;
+text-align: left;
+}
+.linkBox {
+font-size: 11px;
+float: right;
+text-align: right;
+}
+/* end of form style */
+
+</style>
+</head>
+<body>
+<div id="topLabel"></div>
+<div class="permissionForm">
+
+<div>
+<span id="left" class="userBox">User: <br>superuser</span>
+
+</div>
+<form>
+<input type="hidden" name="AuthorizationCode" value="ypWzGdWnudohXQcj1B283ApjFqPg5csogO-UDV7wZCSlnf8gHHzvH_-4DiseJSScNUc0NbujTln41iHmPiu9zA" />
+<div>
+<div class="permissionTitleRequest">
+&#39;SMARTHealthITConfidentialPublic&#39; is requesting these permissions:
+</div>
+<div class='permissionItemRequest'>1. fhirUser</div><div class='permissionItemRequest'>2. launch/patient</div><div class='permissionItemRequest'>3. OpenID Connect</div><div class='permissionItemRequest'>4. patient/*.read</div></div>
+
+<div><input type="submit" id="btnAccept" name="Accept" value="Accept" autofocus/></div>
+<div><input type="submit" id="btnCancel" name="Cancel" value="Cancel"/></div>
+
+</form>
+</div>
+
+
+
+</body>
+<html>
+
+
+Show Response
+
+GET /oauth2/authorize?AuthorizationCode=ypWzGdWnudohXQcj1B283ApjFqPg5csogO-UDV7wZCSlnf8gHHzvH_-4DiseJSScNUc0NbujTln41iHmPiu9zA&Accept=Accept HTTP/1.1
+Host: wg-fhir:58143
+Sec-Fetch-Site: same-origin
+Accept-Encoding: gzip, deflate, br
+Cookie: CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+Connection: keep-alive
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Referer: https://wg-fhir:58143/oauth2/authorize?response_type=code&client_id=phki3TSTBBT8v9ktpX1c9aLiHoGZcOrqmFTqY0FG0p0&scope=launch%2Fpatient%20openid%20fhirUser%20patient%2F*.read&redirect_uri=https%3A%2F%2Fwg-fhir%3A58143%2Fcsp%2Fsys%2FFHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls&aud=https%3A%2F%2Fwg-fhir%3A58143%2Ffhir%2Fr4&state=0Ox6EyLRZVEA0uUH&launch=MyLaunchId
+Sec-Fetch-Dest: document
+Accept-Language: en-GB,en;q=0.9
+
+Show Request
+
+HTTP/1.1 302 Redirected
+Content-Type: text/html; charset=utf-8
+Location: https://wg-fhir:58143/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls?code=ypWzGdWnudohXQcj1B283ApjFqPg5csogO-UDV7wZCSlnf8gHHzvH_-4DiseJSScNUc0NbujTln41iHmPiu9zA&state=0Ox6EyLRZVEA0uUH
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:38 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+Content-Length: 0
+
+
+
+Show Response
+
+GET /csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls?code=ypWzGdWnudohXQcj1B283ApjFqPg5csogO-UDV7wZCSlnf8gHHzvH_-4DiseJSScNUc0NbujTln41iHmPiu9zA&state=0Ox6EyLRZVEA0uUH HTTP/1.1
+Host: wg-fhir:58143
+Sec-Fetch-Site: same-origin
+Accept-Language: en-GB,en;q=0.9
+Cookie: CSPSESSIONID-SP-58143-UP-csp-sys-=00b000010000NCghswp9Sp6EZqTyyuMaMJ0JPi53f_inhU4nza; CSPSESSIONID-SP-58142-UP-csp-sys-=00c000010000RlTrAHBbxL$sI3vs3Idgyqd64ZFZMCLJzC7az9; CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+Connection: keep-alive
+Sec-Fetch-Mode: navigate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Referer: https://wg-fhir:58143/oauth2/authorize?response_type=code&client_id=phki3TSTBBT8v9ktpX1c9aLiHoGZcOrqmFTqY0FG0p0&scope=launch%2Fpatient%20openid%20fhirUser%20patient%2F*.read&redirect_uri=https%3A%2F%2Fwg-fhir%3A58143%2Fcsp%2Fsys%2FFHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls&aud=https%3A%2F%2Fwg-fhir%3A58143%2Ffhir%2Fr4&state=0Ox6EyLRZVEA0uUH&launch=MyLaunchId
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br
+
+Show Request
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Set-Cookie: CSPSESSIONID-SP-58143-UP-csp-sys-=000000010000NCghswp9SpcdW2PSuCGytSlBLFGEcNDAlHGMPv; path=/csp/sys/; secure; httpOnly; sameSite=strict;
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:38 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+Set-Cookie: CSPWSERVERID=hzWwa0dA; path=/; httpOnly; secure;
+Content-Encoding: gzip
+Content-Length: 980
+
+\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03\xc4Vas\x1a7\x10\xfd\x1c\xcf\xf8?l\xce3-L\xe1\xce\x8eI\xeb\xd2\x83\x0c\xc188\x13\xdb\x14\xe3\xa4M\xa7\xd3\x11\xd2\xc2\x89\x0a\xe9"\xe9\x80s\xe3\xff^\x1d\x87ml8\xa7\xedd\xa6\xfa\xc2\xddjw\xefi\xdf\xdbE\xbb;\xb0\xbb\x13>?\xbeh\x0f~\xedu \xb2S\xd1t\x86\xec\x17\x04\x91\xe3\x86\x87\xd2s\x16p+\x8c\x90\xb0\xd5\xf3\xf2}\x8a\x96\x00\x8d\x886h\x1b\xde\xd5\xe0\xa4z\xe4A\xb0\xeea\xb9\x15\xd8\xec,\xc84\x16\x08\x97g\xad\xfe\x00Zq\x1c\x06\xf9\xc6\x9a\xa7\xa1\x9a\xc7\x16\x8c\xa6\x0d/\xb266\xf5 \xa0L\xfa\x13\xc3P\xf0\x99\xf6%\xda@\xc6\xd3`\x14qM\x05Gi\x83a\xc2\x05[\x1a\xaa\xb9\xc5y{\xcd0\xc8s=\xc8n\xd3\x07\x9f\xcb\xd6^Ll\x16T\x81\xbd)2\x03\x7f=\xdc\xce\xd6HI[\x1d\x91)\x17i\x1d\xce\x94$TU`\xaa\xa421\xa1\xf8\xd3f\xc0<\xe2\x16\xab\xcb\xdd:\xc4z\x9b\xcb2\xa7\xe1\xd7\xce\xe1\xe00^l\xf1\x88\x90\x8f#[\x87\xc3\xfdY\xb4e[\xcdP\x8f\x84\x9a\xd7\xc1\x9dS \xb1\xc5e\
+xa84C\xed>\x10/\xc0(\xc1\x19\xec\xb5\xdb\xedG\x8e7k\xf5 \xd6\x0b\x14\x06kD\x87C\xc5\xd2\xec\xf9\xd9\xb30n\xdaA\xc4M\x8f\x8c\x11\x1ap\xcb\xd2|\\xcd(\xa8\xbf<:\xa8\x1d\x06\xd4\xc4\x81IMp\xd2=\xed/\xf9\xee,\xfcvN\xce\xf2\xb5\x8bD\xd8\xe8t\xe0\xb7\x95\x1cq\xe6\xec\x9c\x88^2\x14\x9c\xfa\xa7\x92\xe1\xc2\xa7\xc2\xbc\xa2\x8aa#\x8d?\\xbfa\x1fd\xc2T\xf4\xcb\xcftr\xf0\xfa\xc5\xd1a+\x9e\x9c|\xea\x8d_R\xa3\xc6\x17\xd5\xab\xe3\xf7?\xcc?\xb6/\x85\x1c\x1d\x8d\xbb\xdd\xebY\xf7\x8fj\xed\x98\x1b|{yI\xcf\xaf\xe8\xfe\xf90\x99\x0c\x84\xac\x1d\xf0\xee\xb4\xc7\x93\x1f\xaf[\xdf\x18K,6\xf6/\x16\xdfw\xd2w\xfd\x8f\xef;\xad\xfd\xe4\xaa\x1b\x06\xf1\xbd>\xc2\xa8\xd6l'Z;t\xd0\xcbU\xe2\x8aR[W\x14\xe33\xe0\xac\xe1\xadD\xe45\xdf)\xc2\xb8\x1c\xfb\xbe\x1f\x06ns\xddw\xa8\x1f4\x85Kt\x86\x8cS\x17\xa9\xa4)J\x9ci\xf2\xc9\xac\xab\x8e\xb1i\x8c\x0d\xcf\xe2\xc2\x06\x132#\xb9\xd5{\xa4\xf5\x8c\x0d_\x91\xc4F/|\xed\xc8MKe\xdfF(K\xa3D\xd2\x0cF)o\xa0\xf2\xb2\x0b6\x05\x15\x04\xd0G\xc7\x8e\x06\x17\x05tU\x9a\xd5\xd9\xa1\xa44\x10\x99\x02j\xadty3z\xd5\x9c+\xf7%\x80\xdb\xefo:g\xeb\x0eU\xbcBT\xb0\x98\xa2\xc94K9F\xdb\x11\x98=\xbeNOY\xe9\x8e\x95\xb2\xcf\xa5D=p\xd5q\x8a}{yq\xee\x1b\xab]A\xf9(u\xc9+ \x13!*P+oi\xa2l\xddT\xbe\x000?\xf2W\xc4\xb8L\xe8@\x12\xfag\x11\xa6M\xf3\x12\xfeV\xd6\xde\xa0\x85{\xb1\xf5\xf1S\x82\xc6\x1a7\x84r&
+\xa4\x16\xd9-\x95\x85\xdc\xe9<\xb2\xe4\x05\x1b\xd9^\xadb\x1b\x1e|\xf7\x98j\xce*E\xb5\xd1\xe8&\xd3\x0c\xfb8B'&\x8a\xa6\x0e\xbfA\xa6\xfa\xbb\xec\xab\x0d\x0f~/`a\xacI\x1c\xd5\xc1\xea\x047\x1dn\xca\xc5J\x9e\xb8C\x03\x1f\x81T\xdb\x8aC4\xba\x02%\x92mF?j\x1aF,)$\xdf\xe5/=\xcf<|W \x9d\xc2\xe7\xcf\xb0\xf6\xea\x0b\x94c\x1b=)\x1d\x1bi5\x07\x89s\xe8d\xaa(y\xe7\x0a\xee\x0bdr\x90\x85\z\x85\xa2."\xc4&Z\xc2=\xc4-\xe1\xb7E\xfd\x97\x13\xe2[\xf3\x00\xf7\x97\xe6\xc5?\x1a\x0d\xd9|\xfco\x8d\xb7\x9c\xacON\x86\xcc\xe3\x7f\x9d\x0d[ ~\xad\xc1pS\xf6\x1d\x0f4*QG\x85\x12\xe8\xe70\xd7r>\xba@\x85\xc1\xea\x0a\xe0\xfe\xa9\xf2\xeb\xe1\xee\xce\xdf\x00\x00\x00\xff\xff\x03\x00\xeb\xe8\xed\xc67\x0a\x00\x00
+
+
+Show Response
+
+POST /oauth2/token HTTP/1.1
+Host: wg-fhir:58143
+Accept: application/json
+Sec-Fetch-Site: same-origin
+Accept-Language: en-GB,en;q=0.9
+Accept-Encoding: gzip, deflate, br
+Sec-Fetch-Mode: cors
+Content-Type: application/x-www-form-urlencoded
+Origin: https://wg-fhir:58143
+
+
+
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Referer: https://wg-fhir:58143/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls
+Connection: keep-alive
+Sec-Fetch-Dest: empty
+Cookie: CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+
+code=ypWzGdWnudohXQcj1B283ApjFqPg5csogO-UDV7wZCSlnf8gHHzvH_-4DiseJSScNUc0NbujTln41iHmPiu9zA&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwg-fhir%3A58143%2Fcsp%2Fsys%2FFHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls
+Show Request
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: https://wg-fhir:58143
+Cache-Control: no-store
+Date: Wed, 27 Dec 2023 13:34:38 GMT
+Pragma: no-cache
+Content-Length: 999
+
+{"access_token":"j0czA3avQtA2YlrBwR72fPUXfHsKJJW87fcKdXJphsFHVL9_DyM9tKH4x2rqtVLaUKwbC5yVvEsP6N3uleNuNg","token_type":"bearer","id_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6MX0.eyJpc3MiOiJodHRwczovL3dnLWZoaXI6NTgxNDMvb2F1dGgyIiwic3ViIjoic3VwZXJ1c2VyIiwiZXhwIjoxNzAzNjg0Mzc4LCJhdXRoX3RpbWUiOjE3MDM2ODQwNzgsImlhdCI6MTcwMzY4NDA3OCwiYXRfaGFzaCI6IjRGVkdlV2R3Y01BanE1aE5wWHllSGciLCJhdWQiOlsiaHR0cHM6Ly93Zy1maGlyOjU4MTQzL2ZoaXIvcjQiLCJwaGtpM1RTVEJCVDh2OWt0cFgxYzlhTGlIb0daY09ycW1GVHFZMEZHMHAwIl0sImF6cCI6InBoa2kzVFNUQkJUOHY5a3RwWDFjOWFMaUhvR1pjT3JxbUZUcVkwRkcwcDAiLCJzaWQiOiIifQ.OHpuM2-LzqVzaY5D7ZK5OaZMtH-Ei_HVpYzUf5bJJQckMw2RSblmnchZO1Dw8HF69DAzQBgbf_kNEbyGtu01QzlefRbKTgeImMnvhy4-24u44QppZymzydbpK9X-Ewr7POS71s6Q7j_b9wRpNQWgVERPNPdR0_ejbuTk5tF2CYPD39iucgABM6MkFFzTrhEQl7Vgai1vUxih6imd1UWN4016gCFgu3PREtm-7E1LXOzgO7mybTY5wRpCSlg--nNGYmvtSUj5wGXFEsLCv2Q88J0IaTSpWurdSZOSd_C6THIO2ku7yO56usE31aHf9UnjVSHQhmdTpJr2g6BwKuvQFg","expires_in":300,"scope":"fhirUser launch/patient openid patient/*.read"}
+
+
+Show Response
+
+GET /fhir/r4/MedicationRequest?patient=null HTTP/1.1
+Host: wg-fhir:58143
+Sec-Fetch-Site: same-origin
+Accept-Language: en-GB,en;q=0.9
+Accept-Encoding: gzip, deflate, br
+Sec-Fetch-Mode: cors
+Accept: application/json
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15
+Connection: keep-alive
+Referer: https://wg-fhir:58143/csp/sys/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialPublic.Index.cls
+Cookie: CSPWSERVERID=hzWwa0dA; Username=SuperUser; state-97C16EEF-9F1A-11EE-A954-0242AC170002=SYSADM%3A1%2C7; IRISSessionToken=Lqz8TQRwz8xLkdFp; CSPBrowserId=sCh7rqNZtUmZIEWtawU1ug
+Sec-Fetch-Dest: empty
+
+Show Request
+
+HTTP/1.1 401
+Content-Type: text/html; charset=utf-8
+Cache-Control: no-cache
+Date: Wed, 27 Dec 2023 13:34:38 GMT
+Expires: Thu, 29 Oct 1998 17:04:19 GMT
+Pragma: no-cache
+WWW-Authenticate: Bearer
+Content-Length: 0
+
+
+
+Show Response
+
+POST /oauth2/introspection HTTP/1.1
+User-Agent: Mozilla/4.0 (compatible; InterSystems IRIS;)
+Host: wg-fhir:58143
+Accept-Encoding: gzip
+Content-Length: 121
+Content-Type: application/x-www-form-urlencoded
+
+token=j0czA3avQtA2YlrBwR72fPUXfHsKJJW87fcKdXJphsFHVL9_DyM9tKH4x2rqtVLaUKwbC5yVvEsP6N3uleNuNg&token_type_hint=access_token
+Show Request
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-store
+Date: Wed, 27 Dec 2023 13:34:38 GMT
+Pragma: no-cache
+Content-Length: 366
+
+{"active":true,"scope":"fhirUser launch/patient openid patient/*.read","client_id":"phki3TSTBBT8v9ktpX1c9aLiHoGZcOrqmFTqY0FG0p0","username":"superuser","token_type":"bearer","exp":1703684378,"iat":1703684078,"nbf":1703684078,"sub":"superuser","aud":["https://wg-fhir:58143/fhir/r4","phki3TSTBBT8v9ktpX1c9aLiHoGZcOrqmFTqY0FG0p0"],"iss":"https://wg-fhir:58143/oauth2"}

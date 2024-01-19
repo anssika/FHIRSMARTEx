@@ -55,6 +55,12 @@ ClassMethod CreateUpdateFHIRServer()
 	Set tStatus = tServiceInstance.%Save()
 	If ($$$ISERR(tStatus)) Throw ##class(%Exception.StatusException).CreateFromStatus(tStatus)
 
+	//#Dim tRESTCSPConfig As HS.Util.RESTCSPConfig = ##class(HS.Util.RESTCSPConfig).URLIndexOpen($$$AppKeyFromApp(%request.AppMatch))
+	#Dim tRESTCSPConfig As HS.Util.RESTCSPConfig = ##class(HS.Util.RESTCSPConfig).URLIndexOpen(tAppKey)
+	Set tRESTCSPConfig.ServiceConfigName = "From_FHIR_API"
+	Set tStatus = tRESTCSPConfig.%Save()
+	If ($$$ISERR(tStatus)) Throw ##class(%Exception.StatusException).CreateFromStatus(tStatus)
+
 	Set ^Log($Increment(^Log)) = $ZDateTime($H, 3) _ ": done with CreateFHIRServer of FHIRSMARTEx.Install"
 }
 

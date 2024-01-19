@@ -14,6 +14,7 @@ ClassMethod WriteBody(pBaseUrl As %String)
 	Do ..WriteLink(pBaseUrl _ "/FHIRSMARTEx.Client.SMARTHealthIT.ConfidentialSymmetric.Launch.cls?iss=" _ tISS,, "<br>")
 
 	&html<<br>>
+	&html<<h3>Old SMART Clients - May not work any longer</h3>> 
 	Do ..WriteLink(pBaseUrl _ "/FHIRSMARTEx.Client.IRIS.ConfidentialSymmetric.ClientV3.cls",, "<br>")
 	Do ..WriteLink(pBaseUrl _ "/FHIRSMARTEx.Client.IRIS.ConfidentialSymmetric.ClientV2.cls",, "<br>")
 	Do ..WriteLink(pBaseUrl _ "/FHIRSMARTEx.Client.IRIS.ConfidentialSymmetric.Client.cls",, "<br>")

@@ -10,6 +10,7 @@ Parameter RESOURCESPATH = "/fhir/r4";
 
 ClassMethod Scope() As %String
 {
+	Return "launch user/*.*"
 	Return "user/*.*"
 	Return "system/*.*"
 	Return "openid patient/*.* launch/patient/2"

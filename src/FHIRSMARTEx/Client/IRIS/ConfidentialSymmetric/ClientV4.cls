@@ -8,8 +8,24 @@ Parameter CLIENTSSLCONFIGNAME = "client";
 
 Parameter RESOURCESPATH = "/fhir/r4";
 
-ClassMethod Scope() As %String
+Parameter FHIRINTERACTION = "/Patient/9000";
+
+ClassMethod GetScopes(pGrantType As %String = "AC") As %String
 {
+	/* Some examples from http://www.hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html
+	 *
+		launch           Permission to obtain launch context when app is launched from an EHR
+		openid fhirUser  Permission to retrieve information about the current logged-in user
+		launch/patient   When launching outside the EHR, ask for a patient to be selected at launch time
+			or           when launched from an EHR, a hint to include patient context
+		launch/encounter when launched from an EHR, a hint to include encounter context
+
+		patient/Patient.rs Permission to read and search for the current patient
+		patient/*.rs       Permission to read and search any resource for the current patient
+	*/
+
+	Return "launch patient/Patient.rs"
+	Return "launch patient/Patient.read"
 	Return "user/*.*"
 	Return "system/*.*"
 	Return "openid patient/*.* launch/patient/2"
@@ -39,7 +55,7 @@ ClassMethod OnPage() As %Status
 		*/
 
 		// AC = authorization_code, R = client_credentials. The other grant types not supported by this client are: "implicit", "password", "jwt_authorization"
-		Set tGrantType = $Get(%request.Data("grantType", 1), "")
+		#Dim tGrantType As %String = $Get(%request.Data("grantType", 1), "")
 
 		&html<<p>>
 		&html<url parameter </strong>grantType</strong> has value #(tGrantType)#...>
@@ -75,7 +91,7 @@ ClassMethod OnPage() As %Status
 		/********************************************************************************
 		Test if this client is authorized?
 		*/
-		Set tIsAuthorized = ..IsAuthorized(tOAuth2AppName, .tAccessToken, .tIdToken, .tResponseProperties)
+		Set tIsAuthorized = ..IsAuthorized(tOAuth2AppName, .tAccessToken, .tIdToken, .tResponseProperties, tGrantType)
  
  		// Is authorized?
 		If ('tIsAuthorized) {
@@ -97,7 +113,7 @@ ClassMethod OnPage() As %Status
 					<p>
 					Invoking <strong>##class(%SYS.OAuth2.Authorization).GetAccessTokenClient(...)</strong> at #($ZDateTime($H,3))# ...>
 
-				Set tStatus = ##class(%SYS.OAuth2.Authorization).GetAccessTokenClient(tOAuth2AppName, ..Scope(), .tProperties, .tError)
+				Set tStatus = ##class(%SYS.OAuth2.Authorization).GetAccessTokenClient(tOAuth2AppName, ..GetScopes(tGrantType), .tProperties, .tError)
 				If ($$$ISERR(tStatus)) {
 					&html<<br>the call returnd error status = #(##class(%SYSTEM.OBJ).DisplayError(tStatus))#</p>>
 					Return $$$OK  
@@ -106,7 +122,7 @@ ClassMethod OnPage() As %Status
 				/********************************************************************************
 				Test if this client is authorized now?
 				*/
-				Set tIsAuthorized = ..IsAuthorized(tOAuth2AppName, .tAccessToken, .tIdToken, .tResponseProperties)
+				Set tIsAuthorized = ..IsAuthorized(tOAuth2AppName, .tAccessToken, .tIdToken, .tResponseProperties, tGrantType)
 
 				// Is authorized?
 				If ('tIsAuthorized) {
@@ -125,7 +141,7 @@ ClassMethod OnPage() As %Status
 					<p>
 					Invoking <strong>##class(%SYS.OAuth2.Authorization).GetAuthorizationCodeEndpoint(...)</strong> at #($ZDateTime($H,3))# ...>
 
-				#Dim tUrl = ##class(%SYS.OAuth2.Authorization).GetAuthorizationCodeEndpoint(tOAuth2AppName, ..Scope(),
+				#Dim tUrl = ##class(%SYS.OAuth2.Authorization).GetAuthorizationCodeEndpoint(tOAuth2AppName, ..GetScopes(tGrantType),
 																tThisPage,.tProperties,.tIsAuthorized,.tStatus)
 															//$Replace(tThisPage, "ClientV2", "Client"),.tProperties,.tIsAuthorized,.tStatus)
 				If ($$$ISERR(tStatus)) {
@@ -207,7 +223,7 @@ ClassMethod OnPage() As %Status
 
 		#Dim tResourcesUrl As %String
 		Set tResourcesUrl = $Get(%request.CgiEnvs("REQUEST_SCHEME")) _ "://" _ $Get(%request.CgiEnvs("HTTP_HOST")) _
-							 ..#RESOURCESPATH _ "/Patient"
+							 ..#RESOURCESPATH _ ..#FHIRINTERACTION
 		Set tStatus = tHttpRequest.SetHeader("Accept", "application/fhir+json")
 		&html<
 			<p>tHttpRequest.ReturnHeaders() returns: 
@@ -237,13 +253,13 @@ ClassMethod OnPage() As %Status
 
 		&html<
 			<p>
-				Invoing #(tResourcesUrl)# using <strong>tHttpRequest.Get(#(tResourcesUrl)#)</strong> at #($ZDateTime($H,3))# ...
+				Invoking #(tResourcesUrl)# using <strong>tHttpRequest.Get(#(tResourcesUrl)#)</strong> at #($ZDateTime($H,3))# ...
 			>
 
 		Set tStatus = tHttpRequest.Get(tResourcesUrl)
 
 		If ($$$ISERR(tStatus)) {
-			&html<<br>the call returnd error status = #(##class(%SYSTEM.OBJ).DisplayError(tStatus))#</p>>
+			&html<<br>the call returne error status = #(##class(%SYSTEM.OBJ).DisplayError(tStatus))#</p>>
 			Return $$$OK  
 		}
 		&html<<br>The call returned: #(tHttpRequest.HttpResponse.StatusLine)#
@@ -253,16 +269,18 @@ ClassMethod OnPage() As %Status
 		Write "tHttpRequest.HttpResponse.StatusLine = " _ tHttpRequest.HttpResponse.StatusLine, !
 		Write "tHttpRequest.HttpResponse = " _ tHttpRequest.HttpResponse, !
 		Write "tHttpRequest.HttpResponse.Data = " _ tHttpRequest.HttpResponse.Data, !
-		Write:$IsObject(tHttpRequest.HttpResponse.Data) "tHttpRequest.HttpResponse.Data.Size = " _ tHttpRequest.HttpResponse.Data.Size, !
-
+		If ($IsObject(tHttpRequest.HttpResponse.Data)) {
+			Write "tHttpRequest.HttpResponse.Data.Size = " _ tHttpRequest.HttpResponse.Data.Size, !
+		}
+	
 		Write "The (JSON formatted) response body:", !
 		
+		Set tJSONString = ""
 		#Dim tResponseBody As %String = tHttpRequest.HttpResponse.Data
 		If ($IsObject(tResponseBody)) {
 			Set tResponseBody = tHttpRequest.HttpResponse.Data.Read()
 		}
 		If ($Length(tResponseBody)) {
-			Set tJSONString = ""
 			Set tStatus = ##class(%JSON.Formatter).%New().FormatToString(tResponseBody, .tJSONString)
 			If ($$$ISERR(tStatus)) {
 				Write ##class(%SYSTEM.Status).GetErrorText(tStatus)
@@ -293,7 +311,7 @@ ClassMethod CheckCreateClientConfiguration(pOAuth2AppName As %String, pClientTyp
 }
 
 /// Checks it this client is currently authorized or not
-ClassMethod IsAuthorized(pOAuth2AppName As %String, Output pAccessToken As %String, Output pIdToken As %String, pResponseProperties As %String) As %Boolean
+ClassMethod IsAuthorized(pOAuth2AppName As %String, Output pAccessToken As %String, Output pIdToken As %String, pResponseProperties As %String, pGrantType As %String) As %Boolean
 {
 	&html<
 		<h3>Testing if we are already authenticated & authorized</h3>
@@ -303,7 +321,7 @@ ClassMethod IsAuthorized(pOAuth2AppName As %String, Output pAccessToken As %Stri
 
 	#Dim tResponseProperties
 	#Dim tError As %OAuth2.Error
-	#Dim tIsAuthorized As %Boolean = ##class(%SYS.OAuth2.AccessToken).IsAuthorized(pOAuth2AppName,,..Scope(), .pAccessToken, .pIdToken, .pResponseProperties, .tError)
+	#Dim tIsAuthorized As %Boolean = ##class(%SYS.OAuth2.AccessToken).IsAuthorized(pOAuth2AppName,,..GetScopes(pGrantType), .pAccessToken, .pIdToken, .pResponseProperties, .tError)
 	If (tIsAuthorized) {
 		&html<
 			<br>This client is authorized>

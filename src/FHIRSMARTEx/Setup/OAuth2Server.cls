@@ -50,7 +50,10 @@ ClassMethod CreateUpdateOAuth2Server()
 	Set tConfiguration.CustomizationNamespace = "%SYS"
 	Set tConfiguration.CustomizationRoles = "%DB_IRISSYS,%Manager"
 
+	Set tConfiguration.AuthenticateClass = "FHIRSMARTEx.OAuth2.Server.Authenticate"
+	//Set tConfiguration.GenerateTokenClass = "FHIRSMARTEx.OAuth2.Server.JWT"
 	Set tConfiguration.GenerateTokenClass = "%OAuth2.Server.JWT"
+	Set tConfiguration.ValidateUserClass = "FHIRSMARTEx.OAuth2.Server.Validate"
 
  /*	"A" "authorization_code")
 	"I" "implicit")

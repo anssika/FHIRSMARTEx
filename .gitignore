@@ -13,3 +13,4 @@ shared-wg-fhir/*.original
 shared-wg-fhir/wg-fhir.*
 
 src/SMARTFHIR
+src/HS

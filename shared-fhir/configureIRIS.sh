@@ -9,6 +9,7 @@ Zn "FHIR"
 Do ##class(%SYSTEM.OBJ).ImportDir("/src", "*.cls", "c" , .errlog, 1, .imported)
 Do ##class(FHIRSMARTEx.Setup.OAuth2Clients).Setup()
 Do ##class(FHIRSMARTEx.Setup.FHIRServer).Setup()
+Do ##class(FHIRSMARTEx.Setup.Interop).Setup()
 
 Halt
 END

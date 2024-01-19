@@ -1,128 +1,100 @@
 Class FHIRSMARTEx.FHIRServer.Util.OAuth2Token Extends HS.FHIRServer.Util.OAuth2Token
 {
 
-Method ValidateToken() [ Private ]
-{
-	Do ##Super()
+/// 1 = support SMART 2.0 scopes (one of cruds), 0 = do not support
+Parameter SMART2 = 1;
 
- $$$FSLog("Ak******************** ValidateToken() starts")
-	// Must specify an OAuth 2.0 Client name if going to handle a token.
-	If (..%TokenString '= "") && (..%OAuthClient = "") {
-		$$$FSLog("OAuth access token received on end point that has no OAuth 2.0 Client defined")
-		$$$ThrowFHIR($$$HttpOnlyResponse(403))
-	}
+/// 1 = add trace message, 0 = do not add trace messages
+Parameter DOTRACE = 1;
+
+/// Added support for SMART 2.0 scopes (and some tracing)
+/// 
+/// Parses the token JWT object "scope" property and populates %ScopesList and %ClinicalScopes.
+Method SetScopes() [ Private ]
+{
+	Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("FHIRSMARTEx...OAuth2Token: SetScopes:")
+
+	Set scopesList = ""
 	
-	// Attempt token introspection first.
-	Set introStatus = ..GetIntrospection(.introJWTObj)
+	Set scopesString = ..%TokenObject.scope
 	
-	$$$FSLog("GetIntrospection returned status = " _ $Select($$$ISERR(introStatus):$system.Status.GetErrorText(introStatus), 1:1))
+	$$$FSLog("scope string = " _ scopesString)
 	
-	If $$$ISOK(introStatus) {
-		
-		If $IsObject(introJWTObj) {
-			// Guard against customization returning object without active.
-			If introJWTObj.active {
-				Set ..%TokenObject = introJWTObj
-				$$$FSLog("Using JWTObj from introspection")
-				Set ..%LastIntrospectionTime = ..TimeInSeconds($ztimestamp, 0)
-				
-			} Else {
-				$$$FSLog("GetIntrospection returned invalid or inactive OAuth access token")
-				$$$ThrowFHIR($$$HttpOnlyResponse(401))
+	For i = 1:1:$Length(scopesString," ") {
+		Set nextScope = $Piece(scopesString," ",i)
+		Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("  processing scope = " _ nextScope)
+		Continue:nextScope=""
+		Set $List(scopesList, *+1) = nextScope
+		If $Extract(nextScope, 1, 8) = "patient/" {
+			Set clinicalScopeName = "patient"
+		} ElseIf $Extract(nextScope, 1, 5) = "user/" {
+			Set clinicalScopeName = "user"
+		} Else {
+			Set clinicalScopeName = ""
+		}
+		If clinicalScopeName '= "" {
+			Set scopeTypeAndRW = $Piece(nextScope, "/", 2)
+			Set scopeResourceType = $Piece(scopeTypeAndRW, ".", 1)
+ 			Set scopeReadWrite = $Piece(scopeTypeAndRW, ".", 2)
+ 			Set N = $Get(..%ClinicalScopes(clinicalScopeName)) + 1
+			Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("    N = " _ N)
+			// The if - just the if - is custom code
+			// the content of the if block is original code
+			If (('..#SMART2) || ('..IsSMART2Scope(scopeReadWrite))) {
+				// The original code
+				// Add non SMART 2.0 (SMART 1.0) scopes in any case
+				Set ..%ClinicalScopes(clinicalScopeName, N, "resourceType") = scopeResourceType
+				Set ..%ClinicalScopes(clinicalScopeName, N, "readWrite") = scopeReadWrite
+				Set ..%ClinicalScopes(clinicalScopeName) = N
+				Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("    allowed scope " _ scopeResourceType _ "." _ scopeReadWrite)
+				$$$FSLog("allowing scope " _ nextScope)
 			}
-		
+			// Start of custom code
+			If (..#SMART2 && ..IsSMART2Scope(scopeReadWrite)) {
+				$$$FSLog("allowing SMART 2.0 scope(s) " _ nextScope)
+				For i=1:1:$Length(scopeReadWrite) {
+					#Dim tScopeReadWrite As %String = $Extract(scopeReadWrite, i)
+					// Allow SMART 2.0 scope
+					Set ..%ClinicalScopes(clinicalScopeName, N, "resourceType") = scopeResourceType
+					Set ..%ClinicalScopes(clinicalScopeName, N, "readWrite") = tScopeReadWrite
+					Set ..%ClinicalScopes(clinicalScopeName) = N
+					Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("    allowed scope " _ scopeResourceType _ "." _ tScopeReadWrite)
+					If ((tScopeReadWrite = "r") || (tScopeReadWrite = "s")) {
+						// Allow SMART 1.0 scope corresponding the SMART 2.0 scope
+						Set ..%ClinicalScopes(clinicalScopeName, N, "resourceType") = scopeResourceType
+						Set ..%ClinicalScopes(clinicalScopeName, N, "readWrite") = "read"
+						Set ..%ClinicalScopes(clinicalScopeName) = N
+						Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("    allowed scope " _ scopeResourceType _ "." _ "read")
+					}
+					If ((tScopeReadWrite = "c") || (tScopeReadWrite = "u") || (tScopeReadWrite = "d")) {
+						// Allow SMART 1.0 scope corresponding the SMART 2.0 scope
+						Set ..%ClinicalScopes(clinicalScopeName, N, "resourceType") = scopeResourceType
+						Set ..%ClinicalScopes(clinicalScopeName, N, "readWrite") = "write"
+						Set ..%ClinicalScopes(clinicalScopeName) = N
+						Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("    allowed scope " _ scopeResourceType _ "." _ "read")
+					}
+				}
+			}
+			// End of custom code
+			
 		} Else {
-			// Success status without returned token is invalid.
-			$$$FSLog("No token object returned by GetIntrospection")
-			$$$ThrowFHIR($$$HttpOnlyResponse(401))
-		}
-		
-	} Else {
-		// Error code 8876 is $$$OAuth2NoEndpoint in %SYS. The lack of
-		// an introspection endpoint is not considered fatal here. The
-		// token obtained via ValidateJWT() will be used as a fallback.
-		If $System.Status.Equals(introStatus, 8876) {
-			Set ..%HasIntrospectionEP = 0
-		} Else {
-			$$$ThrowFHIR($$$HttpOnlyResponse(401))
+			$$$FSLog("dropping scope " _ nextScope)
+			Do:..#DOTRACE ##class(FHIRSMARTEx.Util.SimpleTrace).Append("    discarding scope = " _ nextScope)
 		}
 	}
 	
-	$$$FSLog("HasIntrospectionEP=" _ ..%HasIntrospectionEP)
-	
-	$$$FSLog("AlreadyValidated=" _ ..#AlreadyValidated)
-	
-	// If introspection failed but allowed execution to continue, then
-	// use ValidateJWT() to get an object from the token string.
-	// If introspection succeeded and the token was not yet validated
-	// via ValidateJWT(), then call ValidateJWT().
-	If ('..#AlreadyValidated) || ('$IsObject(introJWTObj)) {
-		// ValidateJWT() verifies that the token is sensical as a JWT, is not expired,
-		// came from the correct issuer, along with other vital information.
- $$$FSLog("Ak******************** calling ValidateJWT()")
-		Set tReturn = ##class(%SYS.OAuth2.Validation).ValidateJWT(..%OAuthClient, ..%TokenString, "", "", .JWTObj, .securityParams, .tSC)		
-		If $$$ISERR(tSC)  {
-			$$$FSLog("ValidateJWT on OAuth access token failed: " _ $system.Status.GetErrorText(tSC))
-			$$$ThrowFHIR($$$HttpOnlyResponse(401))
-		}
-		
-		// If a token object was not obtained via introspection, then set
-		// ..%TokenObject to the object obtained from ValidateJWT().
-		If '$IsObject(introJWTObj) {
-			Set ..%TokenObject = JWTObj
-			$$$FSLog("Using JWTObj from ValidateJWT()")
-		}
-	}
-	
-	If '..#AlreadyValidated {
-		
-		// Ensure that a JWT is signed. If ..#AlreadyValidated is 0,
-		// then securityParams should have been set by ValidateJWT().
-		If '$Data(securityParams("sigalg"))#2 {
-			$$$FSLog("OAuth access token is not signed")
-			$$$ThrowFHIR($$$HttpOnlyResponse(401))
-		}
-		
-		// Validate the audience.
-		If '..ValidateAudience() {
-			$$$FSLog("Token aud failed validation")
-			$$$ThrowFHIR($$$HttpOnlyResponse(401))
-		}
-		
-		// Validate the sub.
- $$$FSLog("Ak******************** calling ValidateSub()")
-		If '..ValidateSub() {
-			$$$FSLog("Token sub failed validation")
-			$$$ThrowFHIR($$$HttpOnlyResponse(401))
-		}
-	}
-	
- $$$FSLog("Ak******************** calling ValidateSub()")
-	Do ..SetScopes()
-	
-	Do ..SetContextValues()
-	
-	// Ensure that the scopes and context are reasonably sensical.
-	// - Must have at least one scope.
-	// - Must have at least one patient or user clinical scope.
-	// - If a patient clinical scope is present, then patient context must also be present.
-	// Patient context value could be present for reasons other than applying patient
-	// scopes, therefore patient context without patient scope is allowed.
-	
-	If ..%ScopesList = "" {
-		$$$FSLog("No scopes found in access token")
-		$$$ThrowFHIR($$$HttpOnlyResponse(403))
-	} ElseIf '($Data(..%ClinicalScopes("patient")) || $Data(..%ClinicalScopes("user"))) {
-		$$$FSLog("No patient or user clinical scopes found in access token")
-		$$$ThrowFHIR($$$HttpOnlyResponse(403))
-	} ElseIf ($Data(..%ClinicalScopes("patient"))) && ('$Data(..%ContextValues("patient"))) {
-		$$$FSLog("No patient context provided for patient clinical scope in access token")
-		$$$ThrowFHIR($$$HttpOnlyResponse(403))
-	}
-	
-	$$$FSLog("Access token PASSED validation by " _ $$$CurrentMethod)
+	Set ..%ScopesList = scopesList
 	
 	Return
+}
+
+ClassMethod IsSMART2Scope(readWrite As %String) As %Boolean
+{
+	// ToDo: more robust implementation
+
+	If ((readWrite = "read") || (readWrite = "write")) return 0
+	If (($Length(readWrite) < 1) || ($Length(readWrite) > 5)) return 0
+	Return 1
 }
 
 }
