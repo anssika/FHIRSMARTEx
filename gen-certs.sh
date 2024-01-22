@@ -2,18 +2,20 @@
 
 # Common parameters
 
-RSA_KEY_NUMBITS="2048"
+RSA_KEY_NUMBITS="3072"	# was 2048
 DAYS="365"
 
 GenCA() {
     local SUBJ=$1
     local CERT_FILE=$2
-   
+
+	# e.g. openssl genrsa -out "CA.key" "3072"
 	echo " creating key ..."
 	openssl genrsa \
 		-out "$CERT_FILE.key" \
 		"$RSA_KEY_NUMBITS"
 
+	# e.g. openssl req -new -key "CA.key" -out "CA.csr" -subj "/C=FI/ST=Finland/L=testL/O=testO/OU=testOU/CN=testCA"
 	echo " creating csr ..."
 	openssl req \
 		-new \
@@ -21,12 +23,15 @@ GenCA() {
 		-out "$CERT_FILE.csr" \
 		-subj "$SUBJ"
 
+	# e.g. openssl req -x509 -key "CA.key" -in "CA.csr" -out "CA.cer" -sha256 -days "365"
+
 	echo " creating cer ..."
 	openssl req \
 		-x509 \
 		-key "$CERT_FILE.key" \
 		-in "$CERT_FILE.csr" \
 		-out "$CERT_FILE.cer" \
+		-sha256 \
 		-days "$DAYS"
     
     #cat $CERT_CA.cer >> "$CERT_FNAME.cer"
@@ -57,7 +62,8 @@ GenCertificate() {
         -CAkey "$CERT_CA.key" \
         -out "$CERT_FILE.cer" \
         -CAcreateserial \
-        -days "$DAYS"
+ 		-sha256 \
+   		-days "$DAYS"
     
     #cat $CERT_CA.cer >> "$CERT_FNAME.cer"
 }
