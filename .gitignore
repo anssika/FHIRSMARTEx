@@ -8,6 +8,7 @@
 certificates
 
 shared-fhir/durable/
+shared-fhir/wg-fhir.*
 
 shared-wg-fhir/*.original
 shared-wg-fhir/wg-fhir.*
