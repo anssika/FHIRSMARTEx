@@ -3,7 +3,7 @@ Demonstrates IRIS for Health configurations, customisations and implementations 
 
 ## Install
 
-Go to a local folder and:
+Select a parent folder for FHIRSMARTEx (e.g. C:\). Go to that folder and:
 ```bash
 git clone https://github.com/anssika/FHIRSMARTEx.git
 cd ./FHIRSMARTEx
