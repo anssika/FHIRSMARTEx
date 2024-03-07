@@ -10,7 +10,7 @@ cd ./FHIRSMARTEx
 docker compose up -d
 ```
 
-Edit your hosts file and add the following entry:
+Edit your hosts file (in folder C:\Windows\System32\drivers\etc) and add the following entry:
 `127.0.0.1 wg-fhir`
 
 ## To access
@@ -19,7 +19,7 @@ Edit your hosts file and add the following entry:
 - FHIR test clients: https://wg-fhir:58143/csp/healthshare/fhir/FHIRSMARTEx.Util.CSP.Home.cls
 - Web Gateway Management: https://localhost:58143/csp/bin/Systems/Module.cxw
 
-You can user username/password **superuser**/**SYS** when logging in the first time.
+Please use username/password **superuser**/**SYS** when logging in the first time.
 
 After the first succesfull login, IRIS redirects you to a page to change the default password. The old password is **SYS** and the least secure choice for the new password would be **sys**.
 
