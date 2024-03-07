@@ -1,5 +1,5 @@
 # FHIRSMARTREx
-Example of a configuration including FHIR server, Authorisation server and FHIR clients - all implemented using IRIS
+Demonstrates IRIS for Health configurations, customisations and implementations related to FHIR and SMART on FHIR, clients and services.
 
 ## Install
 
@@ -7,18 +7,17 @@ Go to a local folder and:
 ```bash
 git clone https://github.com/anssika/FHIRSMARTEx.git
 cd ./FHIRSMARTEx
-./setup.sh
+docker compose up -d
 ```
-This will also start the containers.
-
-## To access
 
 Edit your hosts file and add the following entry:
 `127.0.0.1 wg-fhir`
 
+## To access
 
 - Management portal / fhir: https://localhost:58143/csp/sys/UtilHome.csp
 - FHIR test clients: https://wg-fhir:58143/csp/healthshare/fhir/FHIRSMARTEx.Util.CSP.Home.cls
+- Web Gateway Management: https://localhost:58143/csp/bin/Systems/Module.cxw
 
 You can user username/password **superuser**/**SYS** when logging in the first time.
 
@@ -37,9 +36,14 @@ To start the containers:
 docker compose up -d
 ```
 
-## ToDo - prio 2
+## Certificates
 
-resource for database FHIR: %DB_%DEFAULT --> %DB_FHIR (resource exists)
+Certificates are in place and valid for two yers after creation.
+
+To generate and install new certicates, go to folder FHIRSMARTEx and run script (runs on Mac):
+```bash
+./gen_certs.sh
+```
 
 ## Relevant IRIS documentation
 
