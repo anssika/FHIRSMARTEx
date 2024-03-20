@@ -1,8 +1,7 @@
 # See https://docs.docker.com/compose/compose-file/03-compose-file/ for best practices
 services:
-  # FHIR server, auth server and clients to test the servers
+  # FHIR server, OAuth2 server and clients
   fhir:
-    # 2023.3 may not work ...
     image: intersystems/irishealth-community:2023.3
     container_name: fhir
     hostname: fhir
@@ -21,7 +20,7 @@ services:
     - ISC_CPF_MERGE_FILE=/shared/merge.cpf
     command: ["-a","sh /shared/configureIRIS.sh"]
 
-  # web gateway for fhir
+  # web gateway for OAuth2, FHIR and clients
   wg-fhir:
     image: containers.intersystems.com/intersystems/webgateway:latest-cd
     init: true
@@ -33,7 +32,6 @@ services:
     environment:
     - ISC_CSP_CONF_FILE=/shared/CSP.conf
     - ISC_CSP_INI_FILE=/shared/CSP.ini
-    #- ISC_DATA_DIRECTORY=/wg-shared/durable
     volumes:
     - type: bind
       source: ./shared-wg-fhir

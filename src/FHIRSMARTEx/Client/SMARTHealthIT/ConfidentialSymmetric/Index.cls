@@ -41,8 +41,10 @@ ClassMethod OnPage() As %Status
        <h4>Current Patient</h4>
         <div id="patient">Loading...</div>
         <br/>
+		<!-- Medications removed 12.3.2024
         <h4>Medications</h4>
         <div id="meds">Loading...</div>
+		-->
         <script type="text/javascript">
             FHIR.oauth2.ready().then(function(client) {
                 
@@ -56,6 +58,7 @@ ClassMethod OnPage() As %Status
                     }
                 );
                 
+			/*	Medications removed 12.3.2024
                 // Get MedicationRequests for the selected patient
                 client.request("/MedicationRequest?patient=" + client.patient.id, {
                     resolveReferences: [ "medicationReference" ],
@@ -80,7 +83,7 @@ ClassMethod OnPage() As %Status
                         document.getElementById("meds").innerText = error.stack;
                     }
                 );
-
+			*/
             }).catch(console.error);
         </script>
     </body>
